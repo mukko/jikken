@@ -30,27 +30,38 @@
             #f))))
 
 ;delete
-;# : express String type
+;#\ : express String type
 (define (delete-input-data)
   (let ((c (read-char)))
     (if (not (char=? #\newline c))
-        (delete-input-data))))
+        (delete-input-data)
+        )))
 
 ;input 4 method
 (define (input-4-numbers)
   (let loop ((num-list '()))
     (if (= (length num-list) 4)
-    	(reverse num-list)
+    	  (reverse num-list)
      	  (let ((num (input-number)))
+          (display num-list)
         	(cond ((not num)
-                (delete-input-data)
-                (input-4-numbers))
+                 (delete-input-data)
+                 (input-4-numbers))
                	((member num num-list)
                  (display "same number error\n")
                  (delete-input-data)
                  (input-4-numbers))
                 (else
                   (loop (cons num num-list))))))))
+
+(define (input-four-numbers)
+  (let ((num (input-number)))
+    (cond #|((not num)
+           (display "repeat\n")
+           (input-four-numbers)
+           )|#
+          (else
+            num))))
 
 ;count Blow
 ;Blow   : right number, right place
@@ -67,6 +78,7 @@
 ;Hit    : right number, different place
 ;answer : answer list
 ;data   : input data
+;return : number of hits
 (define (count-Hit answer data)
   (cond ((null? answer) 0)
         ((member (car answer) data)
@@ -85,7 +97,7 @@
    (newline))
  
  
- (define (play answer)
+ #|(define (play answer)
    (let loop ((count 1))
      (let* ((data (input-4-numbers))
             (blow (count-Blow answer data)))
@@ -94,11 +106,5 @@
               (display "Congratulation!\n"))
              (else
                (loop (+ count 1)))))))
- 
- 
- 
- 
- 
- 
- 
- 
+ |#
+ ;(play (make-answer '()))
