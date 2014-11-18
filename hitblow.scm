@@ -1,6 +1,6 @@
 ;random-integerを使うために宣言
 (use srfi-27)
-
+(random-source-randomize! default-random-source)
 ;答えのリストを返す
 ;0 - 9　を重複なしでランダムに
 (define (make-answer answer)
@@ -10,11 +10,6 @@
 			(if (member num answer)
 				(make-answer answer)
 				(make-answer (cons num answer))))))
-
-;答えのリストanswerの作成
-(define answer (make-answer '()))
-;Test
-(display answer)
 
 ;Hit数を返す
 (define (count-Hit answer data)
@@ -45,6 +40,7 @@
 ;単純に、リストの読み込みはreadを使って行う
 ;例外処理は考えない
 (define (hit-blow answer)
+  	(display answer)	;for test "right answer"
 	(display "please input 4 numbers list! [0 - 9]\n> ")
  		(let* ((data (read))
 			(hit (count-Hit answer data)))
@@ -53,4 +49,4 @@
             			(display "Congratulations!\n")
                			(hit-blow answer))))
 
-(hit-blow answer)
+(hit-blow (make-answer '()))
