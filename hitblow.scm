@@ -27,11 +27,11 @@
 ;Blow数を返す
 ;HitしていもBlowに含まれた数が返る
 (define (count-Blow answer data)
-	(cond ((null? answer) 0)
-		  ((member (car answer) data)
-		  (+ 1 (count-Blow (cdr answer) data)))
+	(cond ((null? data) 0)
+		  ((member (car data) answer)
+		  (+ 1 (count-Blow answer (cdr data))))
 		  (else
-		  	(count-Blow (cdr answer) data))))
+		  	(count-Blow answer (cdr data)))))
 
 ;表示用
 (define (display-hit-blow answer data hit)
@@ -42,16 +42,15 @@
 	(newline)
 	)
 
-(define (display-first)
-  (display "please input 4 numbers list! [0 - 9]\n"))
 ;単純に、リストの読み込みはreadを使って行う
 ;例外処理は考えない
 (define (hit-blow answer)
-	;(display "please input 4 numbers list! [0 - 9]\n")
-	(display-first)
- 	(let* ((data (read))
-		(hit (count-Hit answer data)))
-			(display-hit-blow answer data hit)
-	))
+	(display "please input 4 numbers list! [0 - 9]\n> ")
+ 		(let* ((data (read))
+			(hit (count-Hit answer data)))
+				(display-hit-blow answer data hit)
+    				(if (= hit 4)
+            			(display "Congratulations!\n")
+               			(hit-blow answer))))
 
 (hit-blow answer)
