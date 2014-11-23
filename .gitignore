@@ -1,0 +1,10 @@
+# eclipse setting file
+.classpath
+.project
+myscheme/.settings
+
+# Java class files
+*.class
+
+# generated files
+myscheme/bin
