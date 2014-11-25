@@ -1,0 +1,5 @@
+myscheme/.settings/
+myscheme/.classpath
+myscheme/.project
+*.class
+myscheme/bin
