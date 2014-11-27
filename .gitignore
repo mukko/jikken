@@ -8,3 +8,6 @@ myscheme/.settings
 
 # generated files
 myscheme/bin
+
+*.idea
+*.iml
