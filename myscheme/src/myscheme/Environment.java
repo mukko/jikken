@@ -1,9 +1,7 @@
 package myscheme;
 
-import java.util.Map;
-
-import javax.lang.model.element.VariableElement;
+import java.util.HashMap;
 
 public class Environment {
-
+    //private Map<Variable, Int> map = new HashMap<Variable, Int>();  
 }
