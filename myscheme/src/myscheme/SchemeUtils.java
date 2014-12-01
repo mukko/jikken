@@ -36,4 +36,12 @@ public abstract class SchemeUtils {
 		System.err.println("**** ERROR: " + message);
 		throw new RuntimeException(message);
 	}
+	//2つのとき
+	public static Pair list(Object a, Object b){
+		return new Pair(a, new Pair(b, null));
+	}
+	//1つのとき
+	public static Pair list(Object a){
+		return new Pair(a, null);
+	}
 }
