@@ -44,4 +44,8 @@ public abstract class SchemeUtils {
 	public static Pair list(Object a){
 		return new Pair(a, null);
 	}
+	
+	public static Pair cons(Object a, Object b){
+		return new Pair(a, b);
+	}
 }
