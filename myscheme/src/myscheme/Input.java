@@ -92,4 +92,21 @@ public class Input extends SchemeUtils{
 		}
 	}
 	
+	public Object read(){
+		try{
+			Object token = nextToken();
+			if(token == "(") return 
+		}
+	}
+	
+	Object readTail(boolean dotOK){
+		Object token = nextToken();
+		if(token == EOF) return error("EOF during read.");
+		else if(token == ")") return null;
+		else if(token =="."){
+			Object result = read();
+			token = nextToken();
+			if(token != ")")
+		}
+	}
 	}
