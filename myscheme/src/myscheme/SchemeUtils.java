@@ -48,4 +48,9 @@ public abstract class SchemeUtils {
 	public static Pair cons(Object a, Object b){
 		return new Pair(a, b);
 	}
+	
+	public static Object warn(String message){
+		System.err.println("**** WARNING: "+message);
+		return "<warn>";
+	}
 }
