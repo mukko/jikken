@@ -5,6 +5,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
+import javax.lang.model.element.Element;
+
 public class Input extends SchemeUtils{
 	static String EOF = "#!EOF";
 	boolean isPushedToken = false;
@@ -95,18 +97,34 @@ public class Input extends SchemeUtils{
 	public Object read(){
 		try{
 			Object token = nextToken();
-			if(token == "(") return 
+			if(token == "(") return readTail(false);
+			else if(token == ")"){
+				warn("Extra ) ignored.");
+				return read();
+			}else if(token == "."){
+				warn("Extra . ignored.");
+				return read();
+			}else if(token == "'") return list("quote", read());
+			else return token;
+		}catch(IOException e){
+			warn("On input, exception: " + e);
+			return EOF;
 		}
 	}
 	
-	Object readTail(boolean dotOK){
+	Object readTail(boolean dotOK) throws IOException{
 		Object token = nextToken();
 		if(token == EOF) return error("EOF during read.");
 		else if(token == ")") return null;
 		else if(token =="."){
 			Object result = read();
 			token = nextToken();
-			if(token != ")")
+			if(token != ")") warn("Whare's the ')' ? Got" + token + "after .");
+			return result;
+		}else{
+			isPushedToken = true;
+			pushedToken = token;
+			return cons(read(), readTail(true));
 		}
 	}
 	}
