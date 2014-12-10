@@ -1,5 +1,21 @@
+<<<<<<< HEAD
 myscheme/.settings/
 myscheme/.classpath
 myscheme/.project
 *.class
 myscheme/bin
+=======
+# eclipse setting file
+.classpath
+.project
+myscheme/.settings
+
+# Java class files
+*.class
+
+# generated files
+myscheme/bin
+
+*.idea
+*.iml
+>>>>>>> myshceme
