@@ -1,7 +1,8 @@
+;feruma- no syou teiri
 (define (check-prime n d)
 	(if (> d (sqrt n))
 		#t
-		(if (zero? (modulo n d))
+		(if (= 0 (modulo n d))
 			#f
 			(check-prime n (+ d 1)))))
 
@@ -15,3 +16,12 @@
 		(if (is-prime n)
 			(print "素数です")
 			(print "素数ではありません"))))
+
+(define (prime-checker)
+  (print "please input number")
+  (let ((n (read)))
+    (if (number? n)
+        (prime? n)
+        (print "error"))))
+
+(prime-checker)
