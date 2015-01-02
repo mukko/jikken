@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+myscheme/.settings/
+myscheme/.classpath
+myscheme/.project
+*.class
+myscheme/bin
+=======
 # eclipse setting file
 .classpath
 .project
@@ -11,3 +18,4 @@ myscheme/bin
 
 *.idea
 *.iml
+>>>>>>> myshceme

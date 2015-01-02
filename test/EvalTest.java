@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 
@@ -6,10 +7,19 @@ import org.junit.Test;
 /*
  * メソッドごとにテストを書くのは難しそうだったので、変な感じのテストになってる
  */
+=======
+package test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+>>>>>>> test
 public class EvalTest {
 
 	@Test
 	public void Int型の評価値はInt型() throws Exception{
+<<<<<<< HEAD
 		Sexp sexp = new Integer(1);
 		Env env = new Env();
 		Eval eval = new Eval(env);
@@ -100,6 +110,8 @@ public class EvalTest {
 	
 	@Test
 	public void 変数に代入した値と変数の評価値が等しい() throws Exception{
+=======
+>>>>>>> test
 		
 	}
 
