@@ -94,6 +94,16 @@ public class EvalTest {
 	}
 	
 	@Test
+	public void 剰余演算の評価値が正しい() throws Exception{
+		
+	}
+	
+	@Test
+	public void 剰余演算の引数が正常でない時のエラー出力() throws Exception{
+		
+	}
+	
+	@Test
 	public void sqrtの評価値が正しい()throws Exception{
 		
 	}
@@ -103,31 +113,39 @@ public class EvalTest {
 		
 	}
 
+	//=
 	@Test
 	public void 等号演算の評価値が正しい() throws Exception{
 		
 	}
 	
+	//<
 	@Test
 	public void 大なり演算の評価値が正しい() throws Exception{
 		
 	}
 	
+	//<=	
 	@Test
 	public void 大なりイコール演算の評価値が正しい() throws Exception{
 		
 	}
 	
+	//>
 	@Test
 	public void 小なり演算の評価値が正しい() throws Exception{
 		
 	}
 	
+	//>=
 	@Test
 	public void 小なりイコール演算の評価値が正しい() throws Exception{
 		
 	}
 	
+	//integer?
 	@Test
-	public void 
+	public void 整数かどうかの評価値が正しい() throws Exception{
+		
+	}
 }
