@@ -1,0 +1,1 @@
+public abstract class Atom implements Sexp {}
