@@ -28,15 +28,15 @@ public class EvalTest {
 	
 	@Test
 	public void 加算の評価値が正しい() throws Exception{
-		int op1 = 2;
-		int op2 = 3;
 		Env env = new Env();
 		Eval eval = new Eval(env);
 		Reader reader = new Reader(env);
-		Sexp ans = new Integer(5);
+		//Sexp ans = new Integer(5);
+		int ans = 5;
 		Sexp sexp;
 		sexp = reader.readFromString("(+ 2 3)");
-		Sexp actual = eval.eval(sexp);
+		Sexp actualExp = eval.eval(sexp);
+		int actual = (int) ((Integer)actualExp).getValue();
 		assertEquals(actual,ans);
 	}
 	
@@ -103,4 +103,31 @@ public class EvalTest {
 		
 	}
 
+	@Test
+	public void 等号演算の評価値が正しい() throws Exception{
+		
+	}
+	
+	@Test
+	public void 大なり演算の評価値が正しい() throws Exception{
+		
+	}
+	
+	@Test
+	public void 大なりイコール演算の評価値が正しい() throws Exception{
+		
+	}
+	
+	@Test
+	public void 小なり演算の評価値が正しい() throws Exception{
+		
+	}
+	
+	@Test
+	public void 小なりイコール演算の評価値が正しい() throws Exception{
+		
+	}
+	
+	@Test
+	public void 
 }
