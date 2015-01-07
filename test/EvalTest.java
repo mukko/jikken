@@ -9,17 +9,17 @@ import org.junit.Test;
 public class EvalTest {
 
 	@Test
-	public void Int型の評価値はInt型() throws Exception{
-		Sexp sexp = new Integer(1);
+	public void HInteger型の評価値はHInteger型() throws Exception{
+		Sexp sexp = new HInteger(1);
 		Env env = new Env();
 		Eval eval = new Eval(env);
 		Sexp actual = eval.eval(sexp);
-		assertThat(actual, is(instanceOf(Integer.class)));
+		assertThat(actual, is(instanceOf(HInteger.class)));
 	}
 	
 	@Test
-	public void Int値1の評価値はInt値1() throws Exception{
-		Sexp sexp = new Integer(1);
+	public void HInteger値1の評価値はHInteger値1() throws Exception{
+		Sexp sexp = new HInteger(1);
 		Env env = new Env();
 		Eval eval = new Eval(env);
 		Sexp actual = eval.eval(sexp);
@@ -31,12 +31,11 @@ public class EvalTest {
 		Env env = new Env();
 		Eval eval = new Eval(env);
 		Reader reader = new Reader(env);
-		//Sexp ans = new Integer(5);
-		Integer ans = new Integer(5);
+		int ans = 5;
 		Sexp sexp;
 		sexp = reader.readFromString("(+ 2 3)");
 		Sexp actualExp = eval.eval(sexp);
-		int actual = (int) ((Integer)actualExp).getValue();
+		int actual = (int)((HInteger)actualExp).getValue();
 		assertEquals(actual,ans);
 	}
 	
@@ -54,7 +53,7 @@ public class EvalTest {
 	public void 減算の評価値が正しい() throws Exception{
 		int op1 = 3;
 		int op2 = 2;
-		Sexp ans = new Integer(op1-op2);
+		Sexp ans = new HInteger(op1-op2);
 		Env env = new Env();
 		Eval eval = new Eval(env);
 		Sexp sexp;
