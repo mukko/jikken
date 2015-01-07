@@ -1,8 +1,5 @@
 import java.io.*;
 
-import com.apple.jobjc.PrimitiveCoder.SShortCoder;
-
-
 public class Lisp {
 	static Lisp lisp;
 	Env env;
